@@ -37,5 +37,23 @@ fn main() -> io::Result<()> {
 
     println!("The sum of the differences is: {}", sum);
 
+    // Part 2
+
+    // For each element in numbers_1, how many times does it appear in numbers_2?
+    let mut similarity_count = 0;
+    for i in 0..numbers_1.len() {
+        let mut count = 0;
+        for j in 0..numbers_2.len() {
+            if numbers_1[i] == numbers_2[j] {
+                count += 1;
+            }
+        }
+        let similarity = count * numbers_1[i];
+        similarity_count += similarity;
+
+    }
+    
+    println!("The similarity count is: {}", similarity_count);
+    
     Ok(())
 }
